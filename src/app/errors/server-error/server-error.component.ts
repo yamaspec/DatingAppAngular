@@ -10,6 +10,7 @@ export class ServerErrorComponent implements OnInit {
   error: any;
 
   constructor(private router: Router) {
+    // This is the only place where to get the current navigation.
     const navigation = this.router.getCurrentNavigation();
     this.error = navigation?.extras?.state?.error;
   }

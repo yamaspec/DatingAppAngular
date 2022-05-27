@@ -45,4 +45,9 @@ export class AccountService {
     localStorage.removeItem('user');
     this.currentUserSource.next();
   }
+
+  getLoggedInUser() {
+    var user: User = JSON.parse(localStorage.getItem('user'));
+    return user;
+  }
 }
