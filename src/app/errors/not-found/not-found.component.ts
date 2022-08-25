@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { stringify } from 'querystring';
+import { take } from 'rxjs/operators';
 import { User } from 'src/app/_models/user';
 import { AccountService } from 'src/app/_services/account.service';
 
@@ -10,12 +10,11 @@ import { AccountService } from 'src/app/_services/account.service';
 })
 export class NotFoundComponent implements OnInit {
 
-  loggedIn : boolean = false;
+  user : User;
 
   constructor(private accountService : AccountService ) {
-    var loggedUser = accountService.getLoggedInUser();
-    this.loggedIn = (loggedUser !== null);
-   }
+    this.accountService.currentUser$.pipe(take(1)).subscribe(user => this.user = user);
+  }
 
   ngOnInit(): void {
   }

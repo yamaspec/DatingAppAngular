@@ -4,6 +4,7 @@ import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { ToastrModule } from 'ngx-toastr';
 import { TabsModule } from 'ngx-bootstrap/tabs';
 import { NgxGalleryModule } from '@kolkov/ngx-gallery';
+import { NgxDropzoneModule } from 'ngx-dropzone';
 
 @NgModule({
   declarations: [],
@@ -14,13 +15,15 @@ import { NgxGalleryModule } from '@kolkov/ngx-gallery';
       positionClass: 'toast-bottom-right'
     }),
     TabsModule.forRoot(),
-    NgxGalleryModule
+    NgxGalleryModule,
+    NgxDropzoneModule
   ],
   exports: [
     BsDropdownModule,
     ToastrModule,
     TabsModule,
-    NgxGalleryModule
+    NgxGalleryModule,
+    NgxDropzoneModule
   ]
 })
 export class SharedModule { }

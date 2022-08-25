@@ -39,13 +39,13 @@ export class MemberDetailComponent implements OnInit {
 		  big: photo?.url
 	  })
     }
-	return imageUrls;
+	  return imageUrls;
   }
 
   loadMember() {
     this.memberService.getMember(this.route.snapshot.paramMap.get('username')).subscribe(member => {
       this.member = member;
-	  this.galleryImages = this.getImages();
+	    this.galleryImages = this.getImages();
     })
   }
 

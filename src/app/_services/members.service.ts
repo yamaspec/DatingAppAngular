@@ -15,7 +15,9 @@ export class MembersService {
   constructor(private http: HttpClient) { }
 
   getMembers() {
-    if (this.members.length > 0) return of(this.members);
+    if (this.members.length > 0) {
+      return of(this.members);  // returns an Observable
+    }
     return this.http.get<Member[]>(this.baseUrl + 'users').pipe(
       map(members => {
         this.members = members;
@@ -26,7 +28,9 @@ export class MembersService {
 
   getMember(username: string) {
     const member = this.members.find(x => x.username === username);
-    if (member !== undefined) return of(member);
+    if (member !== undefined) {
+      return of(member);
+    }
     return this.http.get<Member>(this.baseUrl + 'users/' + username);
   }
 

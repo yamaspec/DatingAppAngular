@@ -16,9 +16,7 @@ const routes: Routes = [
   {path: '', component: HomeComponent},
   // One guard protects all paths
   {
-    path: '',
-    runGuardsAndResolvers: 'always',
-    canActivate: [AuthGuard],         // Protecting all children routes
+    path: '', runGuardsAndResolvers: 'always', canActivate: [AuthGuard],         // Protecting all children routes
     children: [
       {path: 'members', component: MemberListComponent},
       {path: 'members/:username', component: MemberDetailComponent},

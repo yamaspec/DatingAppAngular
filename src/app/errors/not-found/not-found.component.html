@@ -2,7 +2,7 @@
     <h1>Not Found</h1>
     <br>
     <button class="btn btn-info btn-lg mr-3" routerLink='/'>Return to Home Page</button>
-    <ng-container *ngIf="(loggedIn)">
+    <ng-container *ngIf="(user)">
         <button  class="btn btn-info btn-lg" routerLink='/members'>Return to Matches</button>
     </ng-container>
 </div>
